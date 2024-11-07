@@ -4,7 +4,5 @@
     "node": true
   },
   "extends": ["eslint:recommended"],
-  "rules": {
-    // 你可以根据需要自定义 ESLint 规则
-  }
+  "rules": {}
 }
