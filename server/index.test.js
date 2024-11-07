@@ -118,7 +118,7 @@ describe("POST register", () => {
     expect(data).to.include.all.keys("id", "email");
   });
   it("should not post a user with less than 8 character password", async () => {
-    const email = `register${Date.now()}@foo.com`;
+    const email = "short@foo.com";
     const password = "1234";
     const response = await fetch(base_url + "user/register", {
       method: "post",
@@ -138,11 +138,13 @@ describe("POST login", () => {
   const email = "login@foo.com";
   const password = "login123";
   insertTestUser(email, password);
+  const token = getToken(email);
   it("should login with valid credentials", async () => {
     const response = await fetch(base_url + "user/login", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
+        Authorization: token,
       },
       body: JSON.stringify({ email: email, password: password }),
     });
