@@ -1,6 +1,6 @@
 import { pool } from "../helpers/db.js";
 import { Router } from "express";
-import { emptyOrRows } from "../helpers/utils.js";
+// import { emptyOrRows } from "../helpers/utils.js";
 import auth from "../helpers/auth.js";
 import {
   getTasks,

@@ -1,8 +1,8 @@
 import { hash, compare } from "bcrypt";
 import jwt from "jsonwebtoken";
-const { sign } = jwt;
 import { insertUser, selectUserByEmail } from "../models/User.js";
 
+const { sign } = jwt;
 class ApiError extends Error {
   constructor(message, statusCode) {
     super(message);
